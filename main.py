@@ -22,7 +22,7 @@ for folder in FOLDERS:
 # Tipos de archivo permitidos por carpeta
 ALLOWED_TYPES = {
     "documents": [".pdf"],
-    "ocr": [".json"],
+    "ocr": [".json", ".pkl"],
     "embeddings": [".json", ".npy", ".pkl"]  # Agregué algunos formatos comunes para embeddings
 }
 
