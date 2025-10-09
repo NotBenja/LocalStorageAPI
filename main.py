@@ -102,13 +102,14 @@ async def upload_file(folder: str, file: UploadFile = File(...)):
     - **file**: Archivo a subir
     """
     validate_folder(folder)
-    validate_file_type(folder, file.filename)
     
     if not file.filename:
         raise HTTPException(
             status_code=400,
             detail="El archivo debe tener un nombre válido"
         )
+    
+    validate_file_type(folder, file.filename)
     
     file_path = STORAGE_BASE / folder / file.filename
     
